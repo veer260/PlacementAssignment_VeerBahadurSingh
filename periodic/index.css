@@ -1,0 +1,157 @@
+.periodic-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.periodic-row :nth-child(1) div {
+  background-color: red;
+}
+
+.periodic-row :nth-child(2) div {
+  background-color: red;
+}
+
+.periodic-row :nth-child(3) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(4) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(5) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(6) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(7) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(8) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(9) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(10) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(11) div {
+  background-color: rgb(64, 148, 208);
+}
+.periodic-row :nth-child(12) div {
+  background-color: rgb(64, 148, 208);
+}
+
+.periodic-row :nth-child(13) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.periodic-row :nth-child(14) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.periodic-row :nth-child(15) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.periodic-row :nth-child(16) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.periodic-row :nth-child(17) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.periodic-row :nth-child(18) div {
+  background-color: rgb(198, 208, 64);
+}
+
+.cell {
+  /* flex: 1; */
+  /* border: darkblue; */
+  /* border: 1px solid black; */
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* width: 40px;
+  height: 40px; */
+  background-color: yellow;
+  padding: 4px;
+  /* margin: 2px; */
+  /* border: 1px;
+  border-color: black; */
+}
+
+.green {
+  /* background-color: brown; */
+}
+
+.at_details {
+  display: none;
+}
+
+.lan :nth-child(3) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(4) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(5) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(6) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(7) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(8) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(9) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(10) div {
+  background-color: greenyellow;
+}
+
+.lan :nth-child(11) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(12) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(13) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(14) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(15) div {
+  background-color: greenyellow;
+}
+.lan :nth-child(16) div {
+  background-color: greenyellow;
+}
+
+.special {
+  background-color: red;
+  /* font-style: italic; */
+}
+
+.cell;
