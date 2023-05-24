@@ -104,3 +104,16 @@ button:focus-visible {
   border-radius: 2px;
   margin: 4px;
 }
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 10px;
+  column-gap: 10px;
+}
+
+.footer span {
+  background-color: teal;
+  color: #fff;
+  cursor: pointer;
+}

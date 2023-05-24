@@ -1,15 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ExpressionContext from "../context/Expression";
 
 const Calculate = () => {
   //   console.log("hey");
   //@ts-ignore
   const { exp, setExp } = useContext(ExpressionContext);
+  const [result, setResult] = useState();
   console.log({ exp });
 
   return (
     <div className="container">
-      <div className="result">{exp}</div>
+      <div className="result">
+        {result ? <div>{result}</div> : <div>{exp}</div>}
+      </div>
       <div className="operators">
         <span
           onClick={() => {
@@ -118,11 +121,29 @@ const Calculate = () => {
         </span>
         <span
           onClick={() => {
-            setExp((prev: string) => prev + "=");
+            setExp(eval(exp).toString());
           }}
         >
           {" "}
           ={" "}
+        </span>
+      </div>
+      <div className="footer">
+        <span
+          className=""
+          onClick={() => {
+            setExp(exp.substring(0, exp.length - 1));
+          }}
+        >
+          {" "}
+          del{" "}
+        </span>
+        <span
+          onClick={() => {
+            setExp("");
+          }}
+        >
+          C
         </span>
       </div>
     </div>
