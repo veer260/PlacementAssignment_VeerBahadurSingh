@@ -1,0 +1,16 @@
+In C++:
+
+
+class Solution {
+public:
+    int maximumProduct(vector<int>& nums) 
+    {
+        sort(nums.begin(), nums.end());
+        int end = nums.size()-1;
+        if(nums[end] < 0) {
+            return nums[end]*nums[end-1]*nums[end-2];   
+        }
+        int maxOfTwo = max(nums[0]*nums[1]*nums[end], nums[end]*nums[end-1]*nums[end-2]);
+        return maxOfTwo;  
+    }
+};

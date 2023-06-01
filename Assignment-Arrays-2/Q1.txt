@@ -1,0 +1,18 @@
+ IN C++:- 
+
+
+
+class Solution {
+public:
+    int arrayPairSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int start = 0;
+        int sum = 0;
+        while(start < nums.size()){
+            sum += nums[start];
+            start += 2;
+
+        }
+        return sum ;
+    }
+};
