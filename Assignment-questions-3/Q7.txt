@@ -1,0 +1,29 @@
+IN C++: 
+
+
+
+
+
+class Solution {
+    string formatRange(int lower, int upper) {
+        if (lower == upper) return to_string(lower);
+        return to_string(lower) + "->" + to_string(upper);
+    }
+public:
+    vector<string> findMissingRanges(vector<int>& A, int lower, int upper) {
+        vector<string> ans;
+        int i = lower, j = 0, N = A.size();
+        while (j < N) {
+            if (i == A[j]) {
+                ++i;
+                ++j;
+            } else {
+                int first = i, last = A[j] - 1;
+                ans.push_back(formatRange(first, last));
+                i = A[j++] + 1;
+            }
+        }
+        if (i <= upper) ans.push_back(formatRange(i, upper));
+        return ans;
+    }
+};
