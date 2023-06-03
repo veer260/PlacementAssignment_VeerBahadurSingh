@@ -1,0 +1,27 @@
+IN C++: 
+
+
+
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        vector<int> ans;
+        int start = 0;
+        int end = nums.size()-1;
+        while(start < end){
+            if(abs(nums[start]) > abs(nums[end])){
+                ans.insert(ans.begin(), nums[start]*nums[start]);
+                start++;
+            }else{
+                ans.insert(ans.begin(),nums[end]*nums[end]);
+                end--;
+            }
+        }
+        ans.insert(ans.begin(),nums[start]*nums[start]);
+        return ans;
+
+        
+
+        
+    }
+};

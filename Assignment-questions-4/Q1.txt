@@ -1,0 +1,69 @@
+IN C++:
+
+A,B, c are the 3 arrays and n1, n2, n3 are their respective lengths.
+
+
+class Solution
+{
+    public:    
+       vector <int> commonElements (int A[], int B[], int C[], int n1, int n2, int n3)
+        {
+            vector<int> ans;
+            int i = 0;    
+            int j = 0;    
+            int k = 0;    
+            while(i< n1 && j < n2 && k < n3) {
+                if(A[i] > B[j]){
+                    j++;
+                    while(j>0 && B[j] == B[j -1]){
+                        j++;
+                    }
+                    continue;
+                }else if(A[i] < B[j]) {
+                    i++;
+                     while(i>0 && A[i] == A[i -1]){
+                        i++;
+                    }
+                    continue;
+                }else if(A[i] == B[j]) {
+                    if(A[i] == C[k]){
+                        ans.push_back(A[i]);
+                        
+                        i++;
+                        j++;
+                        k++;
+                         while(j>0 && B[j] == B[j -1]){
+                        j++;
+                    }
+                     while(i>0 && A[i] == A[i -1]){
+                        i++;
+                    }
+                     while(k>0 && C[k] == C[k -1]){
+                        k++;
+                    }
+                        
+                    }else if(A[i] > C[k]){
+                        k++;
+                          while(k>0 && C[k] == C[k -1]){
+                        k++;
+                    }
+                        
+                        continue;
+                    }else if(A[i] < C[k]){
+                        i++;
+                        j++;
+                          while(j>0 && B[j] == B[j -1]){
+                        j++;
+                    }
+                     while(i>0 && A[i] == A[i -1]){
+                        i++;
+                    }
+                        
+                        continue;
+                    }
+                }
+            }
+            return ans;
+        }
+
+};
