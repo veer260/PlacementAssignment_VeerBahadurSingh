@@ -1,0 +1,21 @@
+IN C++:
+
+
+
+class Solution {
+public:
+    vector<vector<int>> construct2DArray(vector<int>& original, int m, int n) {
+        vector<vector<int>> ans(m, vector<int>(n));
+        if(original.size() != m*n) {
+            return {};
+        }
+
+        int i = 0;
+        while(i < original.size()){
+            ans[i/n][i%n] = original[i];
+            i++;
+        }
+        return ans;
+        
+    }
+};
