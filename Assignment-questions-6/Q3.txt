@@ -1,0 +1,44 @@
+IN C++:
+
+
+class Solution {
+public:
+    bool validMountainArray(vector<int>& arr) {
+        int i = 1;
+        if(arr.size() < 3){
+            return false;
+        }
+        while(i < arr.size()){
+            if(arr[i] == arr[i-1] ){
+                return false;
+            }else if(arr[i] > arr[i-1]){
+                i++;
+            }else if(arr[i] < arr[i-1]){
+                if(i == 1){
+                    return false;
+                }else {
+                    break;
+                }
+                
+            }
+        }
+        if(i == arr.size()){
+            return false;
+        }
+
+        i++;
+        
+
+        while(i < arr.size()){
+            if(arr[i] == arr[i-1]){
+                return false;
+            }else if(arr[i] < arr[i-1]){
+                i++;
+            }else if(arr[i] > arr[i-1]){
+                return false;
+            }
+        }
+        return true;
+        
+    }
+};

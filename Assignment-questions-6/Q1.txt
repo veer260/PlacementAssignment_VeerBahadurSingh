@@ -1,0 +1,28 @@
+IN C++:
+
+
+class Solution {
+public:
+    vector<int> diStringMatch(string s) {
+        int i=0;
+        int j=s.length();
+        vector<int> res;
+        for(char ch: s){
+            if(ch == 'I'){
+                res.push_back(i);
+                i++;
+            }else{
+                res.push_back(j);
+                j--;
+            }
+        }
+
+        res.push_back(i);
+        return res;
+
+
+    
+
+        
+    }
+};
