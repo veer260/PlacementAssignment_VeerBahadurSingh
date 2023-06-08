@@ -1,0 +1,38 @@
+IN C++:
+
+
+class Solution {
+public:
+    int compress(vector<char>& chars) {
+          int i = 0;
+    int index = 0;
+    
+    int n = chars.size();
+    while(i < n) {
+        int j = i+1;
+        while(j < n && chars[j] == chars[i]) {
+            j++;
+
+        }
+        //either whole array is traversed 
+        //or
+        //we found a different element from previous
+        //new char at j
+        chars[index] = chars[i];
+        index++;
+        
+        if( j - i > 1) {
+            string count = to_string(j-i);
+            for(char ch: count) {
+                chars[index++] = ch;     
+            }
+        } 
+        i = j;
+        
+    }
+    return index;
+        
+
+        
+    }
+};

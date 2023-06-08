@@ -1,0 +1,44 @@
+IN C++: 
+
+
+
+class Solution {
+public:
+     bool freq(string s){
+        int fr[26]={0};
+        for(int i=0;i<s.size();i++){
+            fr[s[i]-'a']++;
+            if(fr[s[i]-'a']>1){
+                return true;
+            }
+        }
+        return false;
+    }
+    bool help(string s,string goal,int ind){
+        for(int i=ind+1;i<s.size();i++){
+           string temp=goal;
+            swap(temp[ind],temp[i]);
+            if(temp==s){
+                return true;
+            }
+        }
+        return false;
+    }
+    bool buddyStrings(string s, string goal) {
+        if(s.size()!=goal.size()){
+            return false;
+        }
+       
+        string temp=goal;
+        for(int i=0;i<s.size();i++){
+            if(s[i]!=goal[i]){
+                return help(s,goal,i) ;
+            }
+            else if(s==goal){
+               return help(s,goal,i) || freq(s);
+            }
+        }
+        return false;
+        
+    }
+};
