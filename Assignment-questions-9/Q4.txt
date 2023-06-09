@@ -1,0 +1,28 @@
+IN C++:
+
+
+
+
+
+class Solution {
+public:
+    double myPow(double n, int p) {
+         if(n == 1 || n == 0)
+            return n;
+
+        double pow = 1.0;
+
+        while(p)
+        {
+            if(p%2 == 1 && p>0)
+                pow *= n;
+            else if(p%2 == -1 && p<0)
+                pow /= n;
+
+            n *= n;
+            p /= 2;
+        }  
+
+        return pow;       
+    }
+};
