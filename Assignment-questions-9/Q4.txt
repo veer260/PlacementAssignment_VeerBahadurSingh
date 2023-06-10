@@ -6,23 +6,19 @@ IN C++:
 
 class Solution {
 public:
-    double myPow(double n, int p) {
-         if(n == 1 || n == 0)
-            return n;
+    double myPow(double p, int n) {
+        if(n == 1){
+            return p;
+        }
 
-        double pow = 1.0;
+        double ans = 1;
+        if(n%2 == 1) {
+            ans = myPow(p, n/2)*myPow(p, n/2)*x;
 
-        while(p)
-        {
-            if(p%2 == 1 && p>0)
-                pow *= n;
-            else if(p%2 == -1 && p<0)
-                pow /= n;
+        }else {
+            ans = myPow(x, n/2)*myPow(x,n/2);
 
-            n *= n;
-            p /= 2;
-        }  
-
-        return pow;       
+        }
+        return ans;        
     }
 };

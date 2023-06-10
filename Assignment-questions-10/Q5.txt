@@ -1,0 +1,29 @@
+IN C++:
+
+
+
+
+class Solution {
+public:
+    int countLetters(string S) {
+        int count = 0;
+        int consecutive = 1;
+        for (int i = 1; i < S.length(); ++i) {
+            if (S[i] == S[i-1]) {
+                ++consecutive;
+            } else {
+                count += calculate(consecutive);
+                consecutive = 1;
+            }
+        }
+
+        count += calculate(consecutive);
+        return count;
+    }
+
+private:
+    int calculate(int num) {
+        return num * (num + 1) / 2;
+    }
+
+};

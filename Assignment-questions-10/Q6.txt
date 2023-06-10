@@ -1,0 +1,24 @@
+IN C++:
+
+
+
+
+class Solution{
+    public:
+  
+    long long toh(int N, int from, int to, int aux) {
+        long long moves = 0ll;
+        if (N >= 1) {
+            
+            moves += toh(N - 1, from, aux, to);
+            cout << "move disk " << N << " from rod " << from << " to rod " << to << endl;
+           
+            moves++;
+            
+            
+            moves += toh(N - 1, aux, to, from);
+        }
+        return moves;
+    }
+
+};
