@@ -1,0 +1,23 @@
+IN C++:
+
+
+
+
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int i = 0;
+        while(i < nums.size()) {
+            if(nums[i]  != i+1){
+                if(nums[nums[i]-1] == nums[i]){
+                    i++;
+                }else{
+                     swap(nums[nums[i]-1], nums[i]);
+                }
+            }else {
+                i++;
+            }
+        }
+        return nums[nums.size()-1];      
+    }
+};
