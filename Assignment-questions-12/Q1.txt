@@ -1,0 +1,86 @@
+IN C++:
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int val;
+    struct Node* next;
+};
+
+
+Node* newNode(int data) {
+    Node* temp = new Node();
+    temp->val= data;
+    temp->next= NULL;
+    return temp;
+}
+
+int countOfNodes(struct Node* head) {
+    int count = 0;
+    while(head != NULL){
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+
+void printList(struct Node* head) {
+    struct Node* temp = head;
+    while(temp->next != NULL){
+        cout<<temp->val<<"->";
+        temp = temp->next;
+    }
+    cout<<temp->val<<"->"<<"NULL\n";
+
+}
+
+struct Node* deletedMid(struct Node* head) {
+    if (head == NULL)
+        return NULL;
+    if (head->next == NULL) {
+        delete head;
+        return NULL;
+    }
+
+    struct Node* copyCat = head;
+
+    int count = countOfNodes(head);
+
+    int mid = count/2;
+    int i = 0;
+
+
+    while(i < mid-1) {
+        head = head->next;
+        i++;
+
+
+    }
+    head->next = head->next->next;
+    return copyCat;
+}
+
+int main () {
+    struct Node* head = newNode(1);
+    head->next = newNode(2);
+    head->next->next = newNode(3);
+    head->next->next->next = newNode(4);
+    head->next->next->next->next = newNode(5);
+    
+
+    cout<<"Given Linked list\n";
+    printList(head);
+
+
+    head = deletedMid(head);
+    cout<<"Linked list after deletion\n";
+    printList(head);
+
+
+}
