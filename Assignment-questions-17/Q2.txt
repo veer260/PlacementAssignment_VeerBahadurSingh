@@ -1,0 +1,31 @@
+IN C++:
+
+
+
+
+
+class Solution {
+public:
+    int maxSubarraySumCircular(vector<int>& vec) {
+        int n=vec.size(),tmax=0,tmin=0,sum=0;
+        int psum=INT_MIN,nsum=INT_MAX;
+
+        for(int i=0;i<n;i++)
+        {
+            sum+=vec[i];
+
+            tmax+=vec[i];
+            psum = max(psum,tmax);
+            tmax = max(0,tmax);
+
+            tmin +=vec[i];
+            nsum = min(nsum,tmin);
+            tmin = min(0,tmin);
+        }
+        if(sum == nsum)
+            return psum;
+        else
+            return max(psum,sum - nsum);
+        return 0;
+    }
+};

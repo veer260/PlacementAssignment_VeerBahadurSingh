@@ -1,0 +1,53 @@
+IN C++:
+
+
+
+
+
+
+class DataStream {
+public:
+    int value=0,k=0;
+    int i=0,j=0;
+    vector<int>arr;
+    int count=0;
+    DataStream(int value, int k)//Constructor
+    {
+        this->value=value;
+        this->k=k;
+    }
+    bool consec(int num) 
+    {
+        int ans=false;
+        //Calculation
+        //Push the number in the array
+        arr.push_back(num);
+        if(arr[j]==value)
+            count++;
+        if(j-i+1<k)
+        {
+            j++;
+            ans=false;
+        }
+        else if(j-i+1==k)//Window size reached
+        {
+            //Calculation->answer
+            if(count==k)
+                ans=true;
+            //Undo the changes in the left window
+            if(arr[i]==value)
+                count--;
+            //Slide the window  
+            i++;
+            j++;
+        }
+        return ans;
+    }
+};
+
+
+/**
+ * Your DataStream object will be instantiated and called as such:
+ * DataStream* obj = new DataStream(value, k);
+ * bool param_1 = obj->consec(num);
+ */

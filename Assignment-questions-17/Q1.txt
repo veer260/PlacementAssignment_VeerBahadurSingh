@@ -1,0 +1,37 @@
+
+IN C++:
+
+
+
+
+
+
+
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        map<char, int> myMap;
+        int ans = -1;
+        int start = 0;
+        int end = s.length()-1;
+        for( int i = 0; i <= end; i++){
+            if(myMap.count(s[i]) == 0) {
+                myMap[s[i]] = 1;
+
+            }else {
+                myMap[s[i]]++;
+            }
+        }
+        int j = 0;
+        while(j < s.length()){
+            if(myMap[s[j]] == 1){
+                ans = j;
+                break;
+            }
+            j++;
+        }
+
+        return ans;
+        
+    }
+};

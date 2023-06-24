@@ -1,0 +1,55 @@
+IN C++:
+
+
+
+
+
+
+class Solution {
+private:
+    bool present(vector<int> vect, int target){
+        int start = 0;
+        int end = vect.size()-1;
+        int mid = start + (end-start)/2;
+        while(start <= end) {
+            if(vect[mid] == target) {
+                return true;
+            }
+            if(vect[mid] > target) {
+                end = mid-1;
+            }else {
+                start = mid+1;
+            }
+            mid = start+ (end-start)/2;
+        }
+        return false;
+    }
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
+        vector<int> ans;
+        if(nums1.size() >=  nums2.size()) {
+            for(int i =0; i < nums2.size(); i++) {
+                if( i > 0 &&  nums2[i] == nums2[i-1]){
+                    continue;
+                }else {
+                    if(present(nums1, nums2[i])){
+                        ans.push_back(nums2[i]);
+                    }
+                }
+            }
+        }else{
+             for(int i =0; i < nums1.size(); i++) {
+                if( i > 0 &&  nums1[i] == nums1[i-1]){
+                    continue;
+                }else {
+                    if(present(nums2, nums1[i])){
+                        ans.push_back(nums1[i]);
+                    }
+                }
+            }
+        }
+        return ans;      
+    }
+};
